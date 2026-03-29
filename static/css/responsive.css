@@ -1,0 +1,260 @@
+ /* =========================
+   GLOBAL FIXES
+========================= */
+
+*{
+  box-sizing:border-box;
+}
+
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  overflow-x:hidden;
+}
+
+/* ===== SAFE AREA FIX FOR APK / PWA ===== */
+
+body{
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Header ki extra safety */
+
+.top-header{
+  padding-top: calc(10px + env(safe-area-inset-top)) !important;
+}
+
+
+img,video{
+  max-width:100%;
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.hamburger{
+  font-size:22px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  display:none;
+}
+
+/* =========================
+   SIDEBAR OVERLAY
+========================= */
+
+#sidebarOverlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.4);
+  display:none;
+  z-index:999;
+}
+
+#sidebarOverlay.active{
+  display:block;
+}
+
+/* =========================
+   MOBILE STYLES
+========================= */
+
+@media (max-width:768px){
+
+/* ===== HAMBURGER ===== */
+
+.hamburger{
+  display:block !important;
+  margin:0;
+  padding:0;
+}
+
+/* ===== SIDEBAR ===== */
+
+.sidebar{
+  position:fixed;
+  left:-260px;
+  top:0;
+  width:260px;
+  height:100%;
+  background:#fff;
+  transition:0.3s;
+  z-index:1000;
+  overflow-y:auto;
+}
+
+.sidebar.active{
+  left:0;
+}
+
+/* ===== MAIN LAYOUT ===== */
+
+.main-content,
+.main-container{
+  margin-left:0 !important;
+  width:100% !important;
+}
+
+/* ===== HEADER ===== */
+
+.top-header{
+  padding:10px 12px !important;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.top-header > *:not(.hamburger){
+  margin-left:auto;
+}
+
+/* ===== CONTENT PADDING ===== */
+
+.container,
+.content-body,
+.content-container{
+  padding:12px !important;
+}
+
+/* ===== GRIDS STACK ===== */
+
+.stats-grid,
+.action-grid,
+.dashboard-cards{
+  grid-template-columns:1fr !important;
+  gap:16px;
+}
+
+/* ===== CARDS ===== */
+
+.stat-card,
+.action-card{
+  width:100% !important;
+  margin:0 !important;
+  padding:16px !important;
+}
+
+/* ===== TEXT SCALE ===== */
+
+body{
+  font-size:16px;
+}
+
+h1{font-size:22px !important;}
+h2{font-size:20px !important;}
+h3{font-size:18px !important;}
+
+/* ===== FORMS ===== */
+
+.selection-container{
+  flex-direction:column;
+  align-items:stretch;
+}
+
+.filter-inputs{
+  flex-direction:column;
+}
+
+.form-group{
+  width:100%;
+}
+
+/* ===== TABLE SCROLL ===== */
+
+.table-container,
+.table-card,
+.activity-section{
+  overflow-x:auto;
+}
+
+table{
+  min-width:650px;
+}
+
+/* ===== BUTTONS ===== */
+
+.btn-action{
+  padding:6px 8px;
+  font-size:12px;
+}
+
+/* ===== MODAL ===== */
+
+.modal-content{
+  width:95% !important;
+  max-width:95% !important;
+  padding:20px !important;
+  border-radius:14px;
+}
+
+/* ===== CAMERA ===== */
+
+.camera-container,
+.video-container,
+.camera-box,
+.video-wrapper,
+#video,
+video{
+  width:100% !important;
+  height:auto !important;
+  max-height:420px;
+}
+
+video{
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.controls{
+  flex-direction:column;
+  gap:10px;
+}
+
+.btn-primary,
+.btn-generate{
+  width:100%;
+}
+
+/* ===== LOGIN PAGE FIX ===== */
+
+.login-card{
+  width:92% !important;
+  max-width:420px;
+  padding:20px !important;
+  margin:auto;
+}
+
+.login-card h2{
+  font-size:20px;
+  text-align:center;
+}
+
+.login-card input{
+  font-size:16px;
+  padding:12px;
+}
+
+.login-btn{
+  width:100%;
+  padding:14px;
+  font-size:16px;
+}
+
+.login-tabs{
+  display:flex;
+  width:100%;
+}
+
+.login-tabs button{
+  flex:1;
+  padding:10px;
+  font-size:14px;
+}
+
+} 
